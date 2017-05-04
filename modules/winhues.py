@@ -4,7 +4,7 @@
 
 ######################### 本脚本用于颜色化日志输出， 用于补充 hues 的 windows 部分  
 
-"""
+"""  引用方法
 import platform
 sysstr = platform.system()  
 

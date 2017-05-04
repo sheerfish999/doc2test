@@ -1,0 +1,15 @@
+{
+    "CardBindReq":{
+        "userId": "c01d8ce1871743aa8cd9627427456c67",
+        "idNo":"429006199012279999",
+        "idType":"I",
+        "bankRegistMobilePhoneNo":"1350192000",
+        "cardNo":"666",
+        "custName":"666",
+        "cardTypeStr":"111",
+        "bankCode":"05",
+        "provCode":"123",
+        "cityCode":"123",
+        "mobile":"123"
+    }
+} 

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/libreoffice/program
+
+################
+
 #  循环次数,  注意 大循环模式 ,  config.py 不要 设置  isSave=1 , 即记录生成, 速度会减慢而且会生成大量的文件
 times=1
 

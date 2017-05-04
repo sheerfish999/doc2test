@@ -44,10 +44,20 @@ if sysstr == "Windows":
 	import win32com.client
 
 
-
-
 ### 入口为相对路径
 
+def docsave(doc):    ###  文件保存  这里需要特别判断  有异常情况
+
+	try:
+		if sysstr == "Linux":
+			doc.store()
+		if sysstr =="Windows":
+			doc.Save()
+	except:
+		hues.error("EXCEL结果文件可能为只读不可写,请对原用例文件'另存为'后再试.")        #####  注意目前只有这里
+		sys.exit()   ## 强行退出
+
+	
 
 class openexcel():
 
@@ -98,7 +108,7 @@ class openexcel():
 			self.document = desktop.loadComponentFromURL(self.full_path ,"_blank", 0, ())
 		
 			if self.document==None:
-				hues.error("ERROR:文件类型无法识别，或文件已经被程序打开并独占, 请检查 " + localpath + filename )
+				hues.error("文件类型无法识别，或文件已经被程序打开并独占, 请检查 " + localpath + filename )
 
 
 		if sysstr == "Windows":
@@ -111,7 +121,7 @@ class openexcel():
 			self.document=app.Workbooks.Open(self.full_path)
 			
 			if self.document==None:
-				hues.error("ERROR:文件类型无法识别，请检查 " + self.full_path)
+				hues.error("文件类型无法识别，请检查 " + self.full_path)
 			
 
 	#### 返回对应的值
@@ -188,8 +198,9 @@ class openexcel():
 			if sysstr == "Linux":
 				sheets=self.document.getSheets().getByIndex(sheet)
 				sheets.getCellByPosition(column,row).setString(value)
-		
-				self.document.store()
+				
+				docsave(self.document)
+
 
 			if sysstr == "Windows":
 
@@ -200,11 +211,9 @@ class openexcel():
 				row=row+1
 				column=column+1
 
-
 				sheets.Cells(row,column).Value=value
 				
-				self.document.Save()
-
+				docsave(self.document)
 			
 
 	#### 设置背景颜色
@@ -224,7 +233,7 @@ class openexcel():
 				elif color=="yellow":
 					sheets.getCellByPosition(column,row).setPropertyValue("CellBackColor", 0xffd700)         #  黄色
 
-				self.document.store()
+				docsave(self.document)
 
 
 			if sysstr == "Windows":
@@ -247,7 +256,7 @@ class openexcel():
                                         #sheets.Cells(row,column).Interior.ColorIndex=44  ## YELLOW
 					sheets.Cells(row,column).Interior.Color="&H00FFFF"
 				
-				self.document.Save()
+				docsave(self.document)
 
 
 	####  设置列宽
@@ -269,7 +278,7 @@ class openexcel():
 					width=int(width/4.45 *1000)
 					oColumn.setPropertyValue("Width", width)
 
-				self.document.store()
+				docsave(self.document)
 
 
 			if sysstr == "Windows":
@@ -288,7 +297,7 @@ class openexcel():
                                         except:
                                                 hues.warn(u"列宽数值设置错误")
 
-				self.document.Save()
+				docsave(self.document)
 
 
 
@@ -309,7 +318,7 @@ class openexcel():
 					height=int(height/4.45 *1000)
 					oRow.setPropertyValue("Height", height)
 
-				self.document.store()
+				docsave(self.document)
 
 
 			if sysstr == "Windows":
@@ -329,7 +338,7 @@ class openexcel():
                                         except:
                                                 hues.warn(u"行高数值设置错误")
                                                 
-				self.document.Save()
+				docsave(self.document)
 
 
 
@@ -380,7 +389,7 @@ class openexcel():
 				controller = self.document.getCurrentController()
 				controller.setActiveSheet(sheets)
 
-				self.document.store()
+				docsave(self.document)
 
 			if sysstr == "Windows":
 				
@@ -389,7 +398,7 @@ class openexcel():
 
 				sheets.Activate()
 
-				self.document.Save()
+				docsave(self.document)
 
 
 	#### 退出
@@ -400,19 +409,17 @@ class openexcel():
 		
 			if sysstr == "Linux":
 				try:
-					self.document.store()
+					docsave(self.document)
 					self.document.dispose()
 				except:
 					pass	
 
 			if sysstr == "Windows":
 				try:
-					self.document.Close(SaveChanges=1)  
+					self.document.Close(SaveChanges=1)     ### 这里可能有只读的特例没有处理
 				except:
 					pass	
 		
-
-
 
 
 
