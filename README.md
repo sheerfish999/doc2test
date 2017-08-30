@@ -9,7 +9,8 @@
 
 
 # 语法支持及使用方法,  请参考本项目Wiki:
-http://callisto.ngrok.cc/wiki/doku.php?id=doc2test
+
+	http://callisto.ngrok.cc/wiki/doku.php?id=doc2test
 
 
 # 安装方法
@@ -17,32 +18,33 @@ http://callisto.ngrok.cc/wiki/doku.php?id=doc2test
 
 ### 1 需要 pyuno文档操作 及 openoffice/libreoffice 支持
 
-1) 注意不要安装 pip install uno , 安装请 uninstall
+	1) 注意不要安装 pip install uno , 安装请 uninstall
 
-2) 同一个发行版的系统, 一般只在 python2 或 python3 中某一个版本支持python-uno, 因此注意支持的版本并使用对应的python版本:
+	2) 同一个发行版的系统, 一般只在 python2 或 python3 中某一个版本支持python-uno, 因此注意支持的版本并使用对应的python版本:
 
-centos:
+	centos:
 
-yum install python-openoffice  libreoffice
+	yum install python-openoffice  libreoffice
 
-debian:
+	debian:
 
-apt-get install libreoffice-script-provider-python libreoffice
+	apt-get install libreoffice-script-provider-python libreoffice
 
 ### 2 根据实际使用的 python 版本选择 pip 安装支持包:
 
-pip install hues
+	pip install hues
 
-pip3 install request http  (如果使用 python3)
+	pip3 install request http  (如果使用 python3)
 
-pip install jsonpath_rw
+	pip install jsonpath_rw
 
-###3 lxml的解析支持 (debian为例)
-debian:
+### 3 lxml的解析支持 (debian为例)
 
-apt install python-libxml2 # 或python3-libxml2
+	debian:
 
-pip install  lxml   #或 apt-get install python3-lxml #python3
+	apt install python-libxml2 # 或python3-libxml2
+
+	pip install  lxml   #或 apt-get install python3-lxml #python3
 
 ## Windows
 
@@ -50,25 +52,25 @@ pip install  lxml   #或 apt-get install python3-lxml #python3
 
 ### 2) 安装pip包
 
-pip install pywin32
+	pip install pywin32
 
-pip install six
+	pip install six
 
-pip install ply
+	pip install ply
 
-pip install jsonpath_rw
+	pip install jsonpath_rw
 
 ### 3) 安装 libxml2
 
-http://xmlsoft.org/sources/win32/python/libxml2-python-2.7.7.win32-py2.7.exe
+	http://xmlsoft.org/sources/win32/python/libxml2-python-2.7.7.win32-py2.7.exe
 
 ### 4) 安装 lxml
 
-http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml  下载对应的 whl,  如 lxml‑3.6.4‑cp27‑cp27m‑win32.whl
+	http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml  下载对应的 whl,  如 lxml‑3.6.4‑cp27‑cp27m‑win32.whl
 
-pip install lxml‑3.6.4‑cp27‑cp27m‑win32.whl
+	pip install lxml‑3.6.4‑cp27‑cp27m‑win32.whl
 
 ### 5) 若提示安装VC9.0 编译环境，可安装 Micorsoft Visual C++ Compiler for Python 2.7
 
-(http://www.microsoft.com/en-us/download/details.aspx?id=44266）
+	(http://www.microsoft.com/en-us/download/details.aspx?id=44266）
 
