@@ -15,7 +15,7 @@ http://callisto.ngrok.cc/wiki/doku.php?id=doc2test
 # 安装方法
 ## Linux (推荐)
 
-###1 需要 pyuno文档操作 及 openoffice/libreoffice 支持
+### 1 需要 pyuno文档操作 及 openoffice/libreoffice 支持
 
 1) 注意不要安装 pip install uno , 安装请 uninstall
 
@@ -29,7 +29,7 @@ debian:
 
 apt-get install libreoffice-script-provider-python libreoffice
 
-###2 根据实际使用的 python 版本选择 pip 安装支持包:
+### 2 根据实际使用的 python 版本选择 pip 安装支持包:
 
 pip install hues
 
@@ -46,9 +46,9 @@ pip install  lxml   #或 apt-get install python3-lxml #python3
 
 ## Windows
 
-###1) 需要 MS office EXCEL 支持
+### 1) 需要 MS office EXCEL 支持
 
-###2) 安装pip包
+### 2) 安装pip包
 
 pip install pywin32
 
@@ -58,17 +58,17 @@ pip install ply
 
 pip install jsonpath_rw
 
-###3) 安装 libxml2
+### 3) 安装 libxml2
 
 http://xmlsoft.org/sources/win32/python/libxml2-python-2.7.7.win32-py2.7.exe
 
-###4) 安装 lxml
+### 4) 安装 lxml
 
 http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml  下载对应的 whl,  如 lxml‑3.6.4‑cp27‑cp27m‑win32.whl
 
 pip install lxml‑3.6.4‑cp27‑cp27m‑win32.whl
 
-###5) 若提示安装VC9.0 编译环境，可安装 Micorsoft Visual C++ Compiler for Python 2.7
+### 5) 若提示安装VC9.0 编译环境，可安装 Micorsoft Visual C++ Compiler for Python 2.7
 
 (http://www.microsoft.com/en-us/download/details.aspx?id=44266）
 
