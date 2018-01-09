@@ -10,7 +10,7 @@
 
 # 语法支持及使用方法,  请参考本项目Wiki:
 
-	http://callisto.ngrok.cc/wiki/doku.php?id=doc2test
+	http://sheerfish.top/wiki/doku.php?id=doc2test
 
 
 # 安装方法
